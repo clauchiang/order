@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/color.png" type="image/x-icon">
+    <title>點餐系統</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: '微軟正黑體';
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <form action="" method="get" id="mainForm">
+            <table>
+                <tr>
+                    <td>
+                        <h2>點餐系統</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <th>品名</th>
+                    <th>價格</th>
+                    <th>數量</th>
+                    <th>小計</th>
+                </tr>
+                <tr>
+                    <td>
+                        漢堡
+                    </td>
+                    <td>
+                        <select name="" id="optionMeat">
+                            <option value="0" id="" selected>--- -- ---</option>
+                            <option value="70" id="meatC">香雞堡 -- 70元</option>
+                            <option value="90" id="meatF">鱈魚堡 -- 90元</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="number" id="meatNum" min="0">
+                    </td>
+                    <td>
+                        <input type="number" id="meatPrice" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        薯條
+                    </td>
+                    <td>
+                        <select name="" id="optionSide">
+                            <option value="0" id="" selected>-- ---- --</option>
+                            <option value="30" id="sideS">小包 ---- 30元</option>
+                            <option value="50" id="sideB">大包 ---- 50元</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="number" id="sideNum" min="0">
+                    </td>
+                    <td>
+                        <input type="number" id="sidePrice" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        可樂
+                    </td>
+                    <td>
+                        <select name="" id="optionDrink">
+                            <option value="" id="" selected>-- ---- --</option>
+                            <option value="30" id="drinkM">中杯 ---- 30元</option>
+                            <option value="40" id="drinkB">大杯 ---- 40元</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="number" id="drinkNum" min="0">
+                    </td>
+                    <td>
+                        <input type="number" id="drinkPrice" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        總額
+                    </td>
+                    <td colspan="2">
+                        <p id="result">
+                            0
+                        </p>
+                    </td>
+                    <td>
+                        <button type="submit" id="submit">確認</button>
+                        <button type="reset" id="reset">取消</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
