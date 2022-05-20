@@ -45,6 +45,9 @@ mainForm.addEventListener('submit', function (e) {
             let meatF = document.getElementById('meatF');
             resultNum1 = meatF.value * burgerNum;
             break;
+        case "85":
+            let meatP = document.getElementById('meatP');
+            resultNum1 = meatP.value * burgerNum;
         default:
             break;
     }
@@ -83,7 +86,7 @@ mainForm.addEventListener('submit', function (e) {
     let resultNum3 = 0;
 
     switch (optionCola) {
-        case "30":
+        case "25":
             let drinkM = document.getElementById('drinkM');
             resultNum3 = drinkM.value * colaNum;
             break;
@@ -97,5 +100,7 @@ mainForm.addEventListener('submit', function (e) {
     drinkPrice.value = resultNum3;
 
     //總額
-    resultTotal.innerText = parseInt(meatPrice.value) + parseInt(sidePrice.value) + parseInt(drinkPrice.value);
+
+    resultTotal.innerText = parseInt(meatPrice.value) + parseInt(sidePrice.value) + parseInt(drinkPrice.value) + "元";
+
 })
