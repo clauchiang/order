@@ -20,6 +20,8 @@ const drinkNum = document.getElementById('drinkNum');
 const drinkPrice = document.getElementById('drinkPrice');
 
 
+
+
 //總額
 const resultTotal = document.getElementById('result');
 //表單
@@ -99,8 +101,58 @@ mainForm.addEventListener('submit', function (e) {
     //可樂小計
     drinkPrice.value = resultNum3;
 
-    //總額
+    let allTotal = parseInt(meatPrice.value) + parseInt(sidePrice.value) + parseInt(drinkPrice.value);
 
-    resultTotal.innerText = parseInt(meatPrice.value) + parseInt(sidePrice.value) + parseInt(drinkPrice.value) + "元";
+    //確認購買
+    Swal.fire({
+        title: '確定要購買嗎?',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '確定',
+        cancelButtonText: '取消'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+                '今日全店8折，\n 本次消費金額為' + allTotal * 0.8 + "元"
+            )
+            //總額 確認購買打8折
+            resultTotal.innerText = allTotal * 0.8 + "元";
+        } else {
+            Swal.fire(
+                '已取消'
+            )
+        }
+    })
 
 })
+
+
+
+function totalFun() {
+
+    //漢堡小計
+    meatTotal = parseInt(meatNum.value) * optionMeat.value;
+
+    meatPrice.value = meatTotal;
+
+
+    //薯條小計
+    sideTotal = parseInt(sideNum.value) * optionSide.value;
+
+    sidePrice.value = sideTotal;
+
+
+    //可樂小計
+    drinkTotal = parseInt(drinkNum.value) * optionDrink.value;
+
+    drinkPrice.value = drinkTotal;
+
+    //總額
+    let allTotal = parseInt(meatPrice.value) + parseInt(sidePrice.value) + parseInt(drinkPrice.value);
+
+
+    resultTotal.innerHTML = allTotal + "元";
+    return allTotal;
+
+}

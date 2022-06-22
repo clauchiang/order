@@ -96,19 +96,22 @@
             transform: scale(1.1);
             overflow: hidden;
         }
-        .moneyResult{
+
+        .moneyResult {
             text-align: center;
             font-weight: bold;
             font-size: 25px;
         }
-        button{
+
+        button {
             padding: 20px 35px;
             margin: 0 5px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
-        button:active{
+
+        button:active {
             padding: calc(20px / 1.1) calc(35px / 1.1);
         }
     </style>
@@ -145,7 +148,7 @@
                         </label>
                     </td>
                     <td>
-                        <select name="" id="optionMeat">
+                        <select name="" id="optionMeat" onchange="totalFun()">
                             <option value="0" id="" selected>--- -- ---</option>
                             <option value="70" id="meatC">香雞堡 -- 70元</option>
                             <option value="90" id="meatF">鱈魚堡 -- 90元</option>
@@ -153,7 +156,7 @@
                         </select>
                     </td>
                     <td>
-                        <input type="number" id="meatNum" min="0" value="0" name="meatNum">
+                        <input type="number" id="meatNum" min="0" value="0" name="meatNum" onchange="totalFun()">
                     </td>
                     <td>
                         <input type="number" id="meatPrice" readonly>
@@ -167,14 +170,14 @@
                         </label>
                     </td>
                     <td>
-                        <select name="" id="optionSide">
+                        <select name="" id="optionSide" onchange="totalFun()">
                             <option value="0" id="" selected>-- ---- --</option>
                             <option value="30" id="sideS">小包 ---- 30元</option>
                             <option value="50" id="sideB">大包 ---- 50元</option>
                         </select>
                     </td>
                     <td>
-                        <input type="number" id="sideNum" min="0" value="0" name="sideNum">
+                        <input type="number" id="sideNum" min="0" value="0" name="sideNum" onchange="totalFun()">
                     </td>
                     <td>
                         <input type="number" id="sidePrice" readonly>
@@ -189,14 +192,14 @@
                         </label>
                     </td>
                     <td>
-                        <select name="" id="optionDrink">
+                        <select name="" id="optionDrink" onchange="totalFun()">
                             <option value="" id="" selected>-- ---- --</option>
                             <option value="25" id="drinkM">中杯 ---- 25元</option>
                             <option value="40" id="drinkB">大杯 ---- 40元</option>
                         </select>
                     </td>
                     <td>
-                        <input type="number" id="drinkNum" min="0" value="0" name="drinkNum">
+                        <input type="number" id="drinkNum" min="0" value="0" name="drinkNum" onchange="totalFun()">
                     </td>
                     <td>
                         <input type="number" id="drinkPrice" readonly>
@@ -221,6 +224,7 @@
 
     </div>
     <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.18/dist/sweetalert2.all.min.js"></script>
 </body>
 
 </html>
