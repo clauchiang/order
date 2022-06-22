@@ -156,3 +156,8 @@ function totalFun() {
     return allTotal;
 
 }
+
+// 清空之後將總額歸零
+function resetFun(){
+    resultTotal.innerHTML = "0";
+}
